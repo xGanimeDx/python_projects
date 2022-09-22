@@ -1,15 +1,15 @@
 import string
 import secrets
 
-length = input('Please enter the length of the passowrd: ')
+usr_input = input('Please enter the length of the passowrd: ')
 
-while not length.isdigit():
-    length = input('Please use an integer value as a length: ')
+while not usr_input.isdigit():
+    usr_input = input('Please use an integer value as a length: ')
 
-def generate_sequence(length):
+def generate_sequence(length: int) -> str:
     special = '!@#$%^&*()'
     total = string.ascii_letters + string.digits +  special
     password = ''.join(secrets.choice(total) for i in range(length))
     return password
 
-print(generate_sequence(int(length)))
+print(generate_sequence(int(usr_input)))
